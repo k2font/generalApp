@@ -39,8 +39,8 @@ export default function App() {
         </View>
       </View>
 
-      <View>
-        <Text>+</Text>
+      <View style={styles.memoAddButton}>
+        <Text style={styles.memoAddButtonText}>+</Text>
       </View>
     </View>
   );
@@ -49,10 +49,32 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#fffdf6',
     alignItems: 'center',
     justifyContent: 'center',
     paddingTop: 78,
+  },
+
+  memoAddButton: {
+    position: 'absolute',
+    bottom: 32,
+    right: 32,
+    width: 48,
+    height: 48,
+    backgroundColor: '#E31676',
+    borderRadius: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.4,
+    shadowRadius: 3,
+  },
+
+  memoAddButtonText: {
+    fontSize: 32,
+    lineHeight: 34,
+    color: '#fff',
   },
 
   memoList: {
@@ -64,6 +86,7 @@ const styles = StyleSheet.create({
     padding: 16,
     borderBottomWidth: 1,
     borderBottomColor: '#ddd',
+    backgroundColor: '#fff',
   },
 
   memoTitle: {
@@ -86,6 +109,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#265366',
     justifyContent: 'center',
     alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 0.5,
+    shadowRadius: 10,
   },
 
   appbarTitle: {
