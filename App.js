@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
+import MemoList from './src/components/MemoList';
 
 export default function App() {
   return (
@@ -10,6 +11,12 @@ export default function App() {
         <View>
           <Text style={styles.appbarTitle}>MEMOT</Text>
         </View>
+      </View>
+
+      <MemoList />
+
+      <View style={styles.memoAddButton}>
+        <Text style={styles.memoAddButtonText}>+</Text>
       </View>
     </View>
   );
