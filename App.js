@@ -1,18 +1,14 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
+import Appbar from './src/components/Appbar';
 import MemoList from './src/components/MemoList';
 
 export default function App() {
   return (
     <View style={styles.container}>
 
-      <View style={styles.appbar}>
-        <View>
-          <Text style={styles.appbarTitle}>MEMOT</Text>
-        </View>
-      </View>
-
+      <Appbar />
       <MemoList />
 
       <View style={styles.memoAddButton}>
@@ -51,26 +47,5 @@ const styles = StyleSheet.create({
     fontSize: 32,
     lineHeight: 34,
     color: '#fff',
-  },
-
-  appbar: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    height: 78,
-    paddingTop: 30,
-    backgroundColor: '#265366',
-    justifyContent: 'center',
-    alignItems: 'center',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 0 },
-    shadowOpacity: 0.5,
-    shadowRadius: 10,
-  },
-
-  appbarTitle: {
-    color: '#fff',
-    fontSize: 18,
   },
 });
