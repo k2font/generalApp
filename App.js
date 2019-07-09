@@ -11,37 +11,6 @@ export default function App() {
           <Text style={styles.appbarTitle}>MEMOT</Text>
         </View>
       </View>
-
-      <View style={styles.memoList}>
-        <View style={styles.memoListItem}>
-          <Text style={styles.memoTitle}>講座のアイデア</Text>
-          <Text style={styles.memoDate}>2019/07/16</Text>
-        </View>
-
-        <View style={styles.memoListItem}>
-          <Text style={styles.memoTitle}>講座のアイデア</Text>
-          <Text style={styles.memoDate}>2019/07/16</Text>
-        </View>
-
-        <View style={styles.memoListItem}>
-          <Text style={styles.memoTitle}>講座のアイデア</Text>
-          <Text style={styles.memoDate}>2019/07/16</Text>
-        </View>
-
-        <View style={styles.memoListItem}>
-          <Text style={styles.memoTitle}>講座のアイデア</Text>
-          <Text style={styles.memoDate}>2019/07/16</Text>
-        </View>
-
-        <View style={styles.memoListItem}>
-          <Text style={styles.memoTitle}>講座のアイデア</Text>
-          <Text style={styles.memoDate}>2019/07/16</Text>
-        </View>
-      </View>
-
-      <View style={styles.memoAddButton}>
-        <Text style={styles.memoAddButtonText}>+</Text>
-      </View>
     </View>
   );
 }
@@ -75,28 +44,6 @@ const styles = StyleSheet.create({
     fontSize: 32,
     lineHeight: 34,
     color: '#fff',
-  },
-
-  memoList: {
-    width: '100%',
-    flex: 1,
-  },
-
-  memoListItem: {
-    padding: 16,
-    borderBottomWidth: 1,
-    borderBottomColor: '#ddd',
-    backgroundColor: '#fff',
-  },
-
-  memoTitle: {
-    fontSize: 18,
-    marginBottom: 4,
-  },
-
-  memoDate: {
-    fontSize: 12,
-    color: '#a2a2a2',
   },
 
   appbar: {
