@@ -9,7 +9,8 @@
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "no-use-before-define": 0,
     "react/jsx-no-comment-textnodes": 0,
-    "react/prefer-stateless-function": 0
+    "react/prefer-stateless-function": 0,
+    "react/destructuring-assignment": 0
   },
   "parser": "babel-eslint"
 }
