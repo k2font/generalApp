@@ -1,5 +1,4 @@
-import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { createAppContainer, createStackNavigator } from 'react-navigation';
 
 import Appbar from './src/components/Appbar';
 import MemoListScreen from './src/screens/MemoListScreen';
@@ -8,21 +7,24 @@ import MemoEditScreen from './src/screens/MemoEditScreen';
 import LoginScreen from './src/screens/LoginScreen';
 import SignupScreen from './src/screens/SignupScreen';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Appbar />
-      <SignupScreen />
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fffdf6',
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingTop: 78,
+const App = createStackNavigator({
+  Home: { screen: MemoListScreen },
+  MemoDetailScreen: { screen: MemoDetailScreen },
+  MemoEditScreen: { screen: MemoEditScreen },
+  MemoListScreen: { screen: MemoListScreen },
+  LoginScreen: { screen: LoginScreen },
+  SignupScreen: { screen: SignupScreen },
+},
+{
+  defaultNavigationOptions: {
+    headerTitle: 'Memot',
+    headerStyle: {
+      backgroundColor: '#265366',
+    },
+    headerTitleStyle: {
+      color: '#fff',
+    },
   },
 });
+
+export default createAppContainer(App);
