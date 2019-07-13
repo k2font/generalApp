@@ -10,6 +10,7 @@ import fontAwesome from '../../assets/fonts/fa-solid-900.ttf';
 const CustomIcon = createIconSet({
   plus: '\uf067',
   pencil: '\uf303',
+  check: '\uf00c',
 }, 'FontAwesome');
 
 class CircleButton extends React.Component {
