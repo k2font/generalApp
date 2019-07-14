@@ -2,6 +2,7 @@ import React from 'react';
 import {
   StyleSheet,
   View,
+  TouchableHighlight,
 } from 'react-native';
 import * as Font from 'expo-font';
 import { createIconSet } from '@expo/vector-icons';
@@ -27,7 +28,7 @@ class CircleButton extends React.Component {
   }
 
   render() {
-    const { style, color, name } = this.props;
+    const { style, color, name, onPress } = this.props;
 
     let bgColor = '#E31676';
     let textColor = 'white';
@@ -38,22 +39,29 @@ class CircleButton extends React.Component {
     }
 
     return (
-      <View style={[styles.circleButton, style, { backgroundColor: bgColor }]}>
-        {this.state.fontLoaded ? (
-          <CustomIcon name={name} style={[styles.circleButtonTitle, { color: textColor }]} />
-        ) : null}
-      </View>
+      <TouchableHighlight style={[styles.container, style]} onPress={onPress} underlayColor="transparent">
+        <View style={[styles.circleButton, style, { backgroundColor: bgColor }]}>
+          {this.state.fontLoaded ? (
+            <CustomIcon name={name} style={[styles.circleButtonTitle, { color: textColor }]} />
+          ) : null}
+        </View>
+      </TouchableHighlight>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  circleButton: {
+  container: {
+    width: 64,
+    height: 64,
     position: 'absolute',
-    bottom: 32,
-    right: 32,
-    width: 48,
-    height: 48,
+    bottom: 24,
+    right: 24,
+  },
+
+  circleButton: {
+    width: 64,
+    height: 64,
     borderRadius: 50,
     justifyContent: 'center',
     alignItems: 'center',
