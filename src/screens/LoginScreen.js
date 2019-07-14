@@ -2,13 +2,39 @@ import React from 'react';
 import { StyleSheet, View, Text, TextInput, TouchableHighlight } from 'react-native';
 
 class LoginScreen extends React.Component {
+  state = {
+    email: '',
+    password: '',
+  }
+
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.title}>ようこそ</Text>
-        <TextInput value="Email Address" style={styles.input} />
-        <TextInput value="Password" style={styles.input} />
-        <TouchableHighlight style={styles.button} title="送信" onPress={() => {}} >
+        <TextInput
+          value={this.state.email}
+          style={styles.input}
+          onChangeText={(text) => { this.setState({ email: text }); }}
+          autoCapitalize="none"
+          autoCorrect={false}
+          placeholder="Email Address"
+        />
+        <TextInput
+          value={this.state.password}
+          style={styles.input}
+          onChangeText={(text) => { this.setState({ password: text }); }}
+          placeholder="Password"
+          secureTextEntry
+        />
+        <TouchableHighlight
+          style={styles.button}
+          title="送信"
+          onPress={
+            () => {
+
+            }
+          }
+        >
           <Text style={styles.buttonTitle}>LOGIN</Text>
         </TouchableHighlight>
       </View>
