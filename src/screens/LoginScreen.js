@@ -29,6 +29,7 @@ class LoginScreen extends React.Component {
         <TouchableHighlight
           style={styles.button}
           title="送信"
+          underlayColor="#C70F66"
           onPress={
             () => {
 
