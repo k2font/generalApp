@@ -1,6 +1,8 @@
 import React from 'react';
 import { StyleSheet, View, Text, TextInput, TouchableHighlight } from 'react-native';
 
+import firebase from 'firebase';
+
 class SignupScreen extends React.Component {
   state = {
     email: '',
@@ -28,7 +30,21 @@ class SignupScreen extends React.Component {
           placeholder="Password"
           secureTextEntry
         />
-        <TouchableHighlight style={styles.button} underlayColor="#C70F66" title="送信" onPress={() => {}} >
+        <TouchableHighlight
+          style={styles.button}
+          underlayColor="#C70F66"
+          title="送信"
+          onPress={() => {
+            firebase.auth().createUserWithEmailAndPassword(
+              this.state.email,
+              this.state.password
+            ).then((user) => {
+              console.log('success!', user);
+            }).catch((error) => {
+              console.log(error);
+            });
+          }}
+        >
           <Text style={styles.buttonTitle}>SIGNUP</Text>
         </TouchableHighlight>
       </View>
