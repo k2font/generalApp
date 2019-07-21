@@ -1,6 +1,8 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 
+import firebase from 'firebase';
+
 import MemoList from '../components/MemoList';
 import CircleButton from '../elements/CircleButton';
 
@@ -9,7 +11,13 @@ class MemoListScreen extends React.Component {
     return (
       <View style={styles.container}>
         <MemoList navigation={this.props.navigation} />
-        <CircleButton onPress={() => { this.props.navigation.navigate('MemoEditScreen'); }} name="plus" />
+        <CircleButton
+          onPress={() => {
+            const { params } = this.props.navigation.state;
+            this.props.navigation.navigate('MemoCreateScreen', { currentUser: params.currentUser });
+          }}
+          name="plus"
+        />
       </View>
     );
   }
