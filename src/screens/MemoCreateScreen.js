@@ -24,10 +24,9 @@ class MemoCreateScreen extends React.Component {
         />
         <CircleButton
           onPress={(body) => {
-            const { params } = this.props.navigation.state;
-            // this.props.navigation.navigate('MemoEditScreen');
             const db = firebase.firestore();
-            db.collection(`users/${params.currentUser.user.uid}/memos`).add({
+            const { currentUser } = firebase.auth();
+            db.collection(`users/${currentUser.uid}/memos`).add({
               body: this.state.body,
               created_on: new Date(),
             }).then((docRef) => {

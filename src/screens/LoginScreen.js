@@ -39,7 +39,7 @@ class LoginScreen extends React.Component {
                   this.props.navigation.navigate('Home', { currentUser: user });
                 })
                 .catch((error) => {
-                  console.log("fdafda", error);
+                  console.log("Error!!", error);
                 });
             }
           }
