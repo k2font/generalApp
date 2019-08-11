@@ -3,22 +3,38 @@ import { StyleSheet, View, Text } from 'react-native';
 
 import CircleButton from '../elements/CircleButton'
 
+// エポックミリ秒をDate型に変換する
+const dateString = (date) => {
+  const str = date;
+  return str;
+};
+
 class MemoDetailScreen extends React.Component {
+  state = {
+    memo: {},
+  }
+
+  componentWillMount() {
+    const { params } = this.props.navigation.state;
+    this.setState({ memo: params.memo });
+  }
+
   render() {
+    const { memo } = this.state;
     return (
       <View style={styles.container}>
         <View>
           <View style={styles.memoHeader}>
             <View>
-              <Text style={styles.memoHeaderTitle}>講座のアイデア</Text>
-              <Text style={styles.memoHeaderDate}>2019/04/12</Text>
+              <Text style={styles.memoHeaderTitle}>{memo.body.substring(0, 10)}</Text>
+              <Text style={styles.memoHeaderDate}>{dateString(memo.created_on.seconds)}</Text>
             </View>
           </View>
         </View>
 
         <View style={styles.memoContent}>
           <Text>
-            講座のアイデアです。
+            {memo.body}
           </Text>
         </View>
 
@@ -27,7 +43,7 @@ class MemoDetailScreen extends React.Component {
           color="white"
           style={styles.editButton}
           onPress={
-            () => {this.props.navigation.navigate('MemoEditScreen'); }
+            () => { this.props.navigation.navigate('MemoEditScreen', { memo }); }
           }
         />
       </View>
@@ -64,6 +80,7 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
     paddingRight: 20,
     backgroundColor: 'white',
+    fontSize: 15,
     flex: 1,
   },
 
