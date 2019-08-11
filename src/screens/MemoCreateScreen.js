@@ -29,11 +29,10 @@ class MemoCreateScreen extends React.Component {
             db.collection(`users/${currentUser.uid}/memos`).add({
               body: this.state.body,
               created_on: new Date(),
-            }).then((docRef) => {
-              console.log(docRef.id);
-            }).catch((error => {
-              console.log(error);
-            }));
+            }).then(() => {
+              this.props.navigation.goBack();
+            }).catch(() => {
+            });
           }}
           name="check"
         />

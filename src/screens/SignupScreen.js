@@ -1,6 +1,8 @@
 import React from 'react';
 import { StyleSheet, View, Text, TextInput, TouchableHighlight } from 'react-native';
 
+import { StackActions, NavigationActions } from 'react-navigation';
+
 import firebase from 'firebase';
 
 class SignupScreen extends React.Component {
@@ -39,7 +41,13 @@ class SignupScreen extends React.Component {
               this.state.email,
               this.state.password
             ).then((user) => {
-              this.props.navigation.navigate('Home');
+              const resetAction = StackActions.reset({
+                index: 0,
+                actions: [
+                  NavigationActions.navigate({ routeName: 'Home' }),
+                ],
+              });
+              this.props.navigation.dispatch(resetAction);
             }).catch((error) => {
               console.log(error);
             });
