@@ -5,4 +5,4 @@
 - FirebaseのFirestoreとAuthenticationを活用している
 
 ### How to use
-- Expoを用意し、(こちら)[https://expo.io/@k2font/SimpleMemoApp]からアプリケーションにアクセスする。
+- Expoを用意し、[こちら](https://expo.io/@k2font/SimpleMemoApp)からアプリケーションにアクセスする。
